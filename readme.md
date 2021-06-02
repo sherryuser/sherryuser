@@ -1,4 +1,4 @@
-<img alt="Night Coding" src="./assets/Hand%20Wave.gif" width='40' align="left"/><h2>Hey there! I'm Shaxriyor</h2>
+<h2>🖖 &nbsp;Hey there! I'm Shaxriyor</h2>
 
 <!-- ## 👋 &nbsp;Hey there! I'm Shaxriyor -->
 
@@ -7,7 +7,7 @@
 💡 &nbsp;I like to explore new technologies and coding.\
 🎓 &nbsp;I'm currently studying Business Information Systems at Westminster International University in Tashkent.\
 ✍️ &nbsp;In my free time, I pursue Graphic Design and Learning more programming languages.\
-✉️ &nbsp;You can shoot me an email at sherryuser1@gmail.com !\
+✉️ &nbsp;You can shoot me an email at sherryuser1@gmail.com
 
 <img alt="Night Coding" src="https://raw.githubusercontent.com/AVS1508/AVS1508/master/assets/Night-Coding.gif" align="right"/>
 
