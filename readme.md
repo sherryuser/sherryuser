@@ -37,7 +37,7 @@
 ### 🤝🏻 &nbsp;Connect with Me
 
 <p align="center">
-<a href="https://www.shaxriyor.me"><img src="https://img.shields.io/badge/-shaxriyor.me-3423A6?style=flat&logo=Google-Chrome&logoColor=white"/></a>
+<a href="https://www.shaxriyor.live"><img src="https://img.shields.io/badge/-shaxriyor.live-3423A6?style=flat&logo=Google-Chrome&logoColor=white"/></a>
 <a href="https://instagram.com/sherryuser"><img src="https://img.shields.io/badge/-@sherryuser-E4405F?style=flat&logo=Instagram&logoColor=white"/></a>
 <a href="https://facebook.com/sherryuser7"><img src="https://img.shields.io/badge/-@sherryuser7-1877F2?style=flat&logo=Facebook&logoColor=white"/></a>
 <a href="https://www.t.me/sherryuser"><img src="https://img.shields.io/badge/-@sherryuser-3DA4E3?style=flat&logo=Telegram&logoColor=white"/></a>
