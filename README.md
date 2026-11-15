@@ -9,6 +9,8 @@
 
 I'm **Shaxriyor**, a full-stack engineer in Tashkent. I build marketplaces, Telegram bots and the money logic behind them, and most of it lives in the CS2 skin economy: prices, floats, deliveries, and the ledgers that keep them honest. When a site won't tell me something, I write a bot that asks it every minute.
 
+Business Information Systems at Westminster International University in Tashkent gave me the business half. The rest I learn by shipping.
+
 ### Inventory
 
 <p align="center">
