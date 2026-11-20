@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419 152" width="419" height="152" role="img" aria-label="telegram-anon-qa-bot: Anonymous Q&amp;A in Telegram: one link, private questions, instant replies.">
+  <title>telegram-anon-qa-bot: Anonymous Q&amp;A in Telegram: one link, private questions, instant replies.</title>
+  <style>
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+    .cap { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.2px; }
+    .pulse { animation: pulse 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .55; } 80%, 100% { transform: scale(3.2); opacity: 0; } }
+    .draw { stroke-dasharray: 1; animation: draw 1s cubic-bezier(.6,0,.2,1) both; }
+    @keyframes draw { 0% { stroke-dashoffset: 1; opacity: 0; } 12% { opacity: 1; } 100% { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <rect x="3.5" y="3.5" width="412" height="145" rx="12" fill="#f6f8fa" stroke="#d1d9e0"/>
+  <rect x="20.5" y="20.5" width="41" height="41" rx="11" fill="#ffffff" stroke="#d1d9e0"/>
+  <g transform="translate(31 31) scale(0.83)" fill="none" stroke="#1f2328" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path class="draw" pathLength="1" style="animation-delay:0.25s" d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path class="draw" pathLength="1" style="animation-delay:0.37s" d="M9 9.5a3 2.5 0 016 0c0 2-2 2-3 3.5"/><path class="draw" pathLength="1" style="animation-delay:0.49s" d="M12 17h.01"/></g>
+  <text x="74" y="38" class="sans" font-size="16.5" font-weight="700" fill="#1f2328">telegram-anon-qa-bot</text>
+  <text x="74" y="56" class="cap" fill="#818b98">TELEGRAM BOT</text>
+  <g transform="translate(384 22) scale(0.67)" fill="none" stroke="#818b98" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></g>
+  <text class="sans" font-size="13.5" fill="#59636e"><tspan x="20" y="88">Anonymous Q&amp;A in Telegram: one link,</tspan><tspan x="20" y="107">private questions, instant replies.</tspan></text>
+  <text x="20" y="130" class="mono" font-size="11" fill="#818b98">Python · Telegram</text>
+  <path transform="translate(372.6 118.5) scale(0.54)" fill="#bf8700" stroke="#bf8700" stroke-width="2" stroke-linejoin="round" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+  <text x="399" y="130" text-anchor="end" class="mono" font-size="12" font-weight="700" fill="#1f2328">4</text>
+</svg>
