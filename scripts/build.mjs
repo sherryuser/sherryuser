@@ -3,6 +3,8 @@
 //   node scripts/build.mjs             build from the stored figures
 //   node scripts/build.mjs --refresh   read fresh figures with the GitHub CLI first, then build
 //
+// .github/workflows/refresh.yml runs the second form once a day and commits what changed.
+//
 // Every image is drawn here as plain SVG, once for GitHub's light theme and once for dark, and
 // animated with CSS only. Nothing on the profile depends on a third-party service being up.
 import { execFileSync } from 'node:child_process';
@@ -15,15 +17,18 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataPath = join(root, 'data', 'profile.json');
 const assets = join(root, 'assets');
 
+// Asked for by name, not as "whoever is logged in": in GitHub Actions that would be a bot.
+const LOGIN = 'sherryuser';
+
 if (process.argv.includes('--refresh')) {
-  const query = `query { viewer { createdAt followers { totalCount }
+  const query = `query($login: String!) { user(login: $login) { createdAt followers { totalCount }
     repositories(ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false, first: 100) {
       totalCount nodes { name stargazerCount } }
     contributionsCollection { contributionCalendar { totalContributions
       weeks { firstDay contributionDays { contributionCount } } } } } }`;
   const viewer = JSON.parse(
-    execFileSync('gh', ['api', 'graphql', '-f', `query=${query}`], { encoding: 'utf8' }),
-  ).data.viewer;
+    execFileSync('gh', ['api', 'graphql', '-f', `query=${query}`, '-f', `login=${LOGIN}`], { encoding: 'utf8' }),
+  ).data.user;
   const stars = Object.fromEntries(viewer.repositories.nodes.map((r) => [r.name, r.stargazerCount]));
   const calendar = viewer.contributionsCollection.contributionCalendar;
   const fresh = {
@@ -37,13 +42,15 @@ if (process.argv.includes('--refresh')) {
       total: w.contributionDays.reduce((sum, d) => sum + d.contributionCount, 0),
     })),
     repoStars: stars,
-    readOn: new Date().toISOString().slice(0, 10),
   };
   mkdirSync(dirname(dataPath), { recursive: true });
   writeFileSync(dataPath, `${JSON.stringify(fresh, null, 2)}\n`);
 }
 
+// The stored figures carry no date of their own, so a day on which nothing changed rebuilds to
+// exactly the same files and there is nothing to commit.
 const data = JSON.parse(readFileSync(dataPath, 'utf8'));
+const TODAY = new Date();
 
 // ---------------------------------------------------------------------------------------------
 // Design values. The neutrals are GitHub's own, so the cards sit in the page like part of it.
@@ -220,7 +227,7 @@ function loop(T) {
   const turn = 3; // seconds per step
   const total = turn * steps.length;
   const joined = new Date(data.joined);
-  const now = new Date(data.readOn);
+  const now = TODAY;
   const months = (now.getFullYear() - joined.getFullYear()) * 12 + now.getMonth() - joined.getMonth() - (now.getDate() < joined.getDate() ? 1 : 0);
   const uptime = `${Math.floor(months / 12)}y ${months % 12}m`;
 
@@ -310,7 +317,7 @@ function activity(T) {
 // Four figures, each rolling into place.
 function stats(T) {
   const H = 156;
-  const years = Math.floor((new Date(data.readOn) - new Date(data.joined)) / (365.25 * 864e5));
+  const years = Math.floor((TODAY - new Date(data.joined)) / (365.25 * 864e5));
   const cells = [
     ['calendar-days', 'YEARS ON GITHUB', years, T.muted],
     ['book-marked', 'PUBLIC REPOS', data.publicRepos, T.muted],
@@ -458,4 +465,4 @@ for (const [theme, T] of Object.entries(THEMES)) {
     count += 1;
   }
 }
-console.log(`built ${count} images from figures read on ${data.readOn}`);
+console.log(`built ${count} images: ${data.contributions.toLocaleString('en-US')} contributions, ${data.stars} stars, ${data.publicRepos} repos, ${data.followers} followers`);
